@@ -1,6 +1,6 @@
 # Anthropic Computer Use API Demo
 
-This project demonstrates the use of Anthropic's Computer API, allowing an AI agent to interact with a virtual computer environment.
+This project demonstrates the use of Anthropic's Computer Use API, allowing an AI agent to interact with a virtual computer environment. Slight mix and match of [Anthropic Quickstart Demo](https://github.com/anthropics/anthropic-quickstarts) to get it running in Daytona.
 
 ## Project Structure
 
