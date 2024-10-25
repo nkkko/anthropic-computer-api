@@ -1,0 +1,29 @@
+{
+    "name": "Anthropic Computer Use Demo",
+    "image": "ghcr.io/anthropics/anthropic-quickstarts:computer-use-demo-latest",
+    "runArgs": [
+      "-e", "ANTHROPIC_API_KEY=${localEnv:ANTHROPIC_API_KEY}",
+      "-e", "WIDTH=${localEnv:WIDTH}",
+      "-e", "HEIGHT=${localEnv:HEIGHT}",
+      "-e", "DISPLAY=:99",
+      "-e", "X11_SOCKET_DIR=/home/computeruse/.X11-unix",
+      "-v", "${localWorkspaceFolder}:/home/computeruse/daytona-anthropic-computer-use-demo",
+      "-p", "5900:5900",
+      "-p", "8501:8501",
+      "-p", "6080:6080",
+      "-p", "8080:8080"
+    ],
+    "postCreateCommand": "sudo chown -R computeruse:computeruse /home/computeruse && ./setup.sh && ./setup_virtual_display.sh && pip install -r requirements.txt",
+    "remoteUser": "computeruse",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python"
+        ]
+      }
+    },
+    "copyFiles": [
+      "manage_xvfb.sh",
+      "setup_virtual_display.sh"
+    ]
+  }
